@@ -19,7 +19,7 @@
 	THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-	OTHER DEALINGS IN THE SOFTWARE.
+	OTHER DEALINGS IN THE SOFTWARE
  */
 
 // List of sessions
@@ -567,7 +567,7 @@ function Janus(gatewayCallbacks) {
 				if(retries > 3) {
 					// Did we just lose the server? :-(
 					connected = false;
-					gatewayCallbacks.error("Lost connection to the server (is it down?)");
+					gatewayCallbacks.error("Send it: lost connection,please refresh");
 					return;
 				}
 				eventHandler();
