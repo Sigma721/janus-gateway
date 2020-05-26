@@ -841,7 +841,7 @@ function Janus(gatewayCallbacks) {
 			ws = Janus.newWebSocket(server, 'janus-protocol');
 			wsHandlers = {
 				'error': function() {
-					Janus.error("Error connecting to the Janus WebSockets server... " + server);
+					Janus.error("Cannot connect to video server...");
 					if (Janus.isArray(servers) && !callbacks["reconnect"]) {
 						serversIndex++;
 						if (serversIndex === servers.length) {
@@ -856,7 +856,7 @@ function Janus(gatewayCallbacks) {
 						}, 200);
 						return;
 					}
-					callbacks.error("Error connecting to the Janus WebSockets server: Is the server down?");
+					callbacks.error("Cannot connect to video server...");
 				},
 
 				'open': function() {
