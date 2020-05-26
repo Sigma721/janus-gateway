@@ -730,7 +730,7 @@ function Janus(gatewayCallbacks) {
 			pluginHandle.slowLink(json["uplink"], json["lost"]);
 		} else if(json["janus"] === "error") {
 			// Oops, something wrong happened
-			Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+			Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 			Janus.debug(json);
 			var transaction = json["transaction"];
 			if(transaction) {
@@ -864,7 +864,7 @@ function Janus(gatewayCallbacks) {
 					transactions[transaction] = function(json) {
 						Janus.debug(json);
 						if (json["janus"] !== "success") {
-							Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+							Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 							callbacks.error(json["error"].reason);
 							return;
 						}
@@ -909,7 +909,7 @@ function Janus(gatewayCallbacks) {
 			success: function(json) {
 				Janus.debug(json);
 				if(json["janus"] !== "success") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 					callbacks.error(json["error"].reason);
 					return;
 				}
@@ -1046,7 +1046,7 @@ function Janus(gatewayCallbacks) {
 				sessionId = null;
 				connected = false;
 				if(json["janus"] !== "success") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 				}
 				callbacks.success();
 				if(notifyDestroyed)
@@ -1104,8 +1104,8 @@ function Janus(gatewayCallbacks) {
 			transactions[transaction] = function(json) {
 				Janus.debug(json);
 				if(json["janus"] !== "success") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
-					callbacks.error("Ooops: " + json["error"].code + " " + json["error"].reason);
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					callbacks.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);
 					return;
 				}
 				var handleId = json.data["id"];
@@ -1189,8 +1189,8 @@ function Janus(gatewayCallbacks) {
 			success: function(json) {
 				Janus.debug(json);
 				if(json["janus"] !== "success") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
-					callbacks.error("Ooops: " + json["error"].code + " " + json["error"].reason);
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					callbacks.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);
 					return;
 				}
 				var handleId = json.data["id"];
@@ -1323,7 +1323,7 @@ function Janus(gatewayCallbacks) {
 				} else if(json["janus"] !== "ack") {
 					// Not a success and not an ack, must be an error
 					if(json["error"]) {
-						Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+						Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 						callbacks.error(json["error"].code + " " + json["error"].reason);
 					} else {
 						Janus.error("Unknown error");	// FIXME
@@ -1360,7 +1360,7 @@ function Janus(gatewayCallbacks) {
 				} else if(json["janus"] !== "ack") {
 					// Not a success and not an ack, must be an error
 					if(json["error"]) {
-						Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+						Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 						callbacks.error(json["error"].code + " " + json["error"].reason);
 					} else {
 						Janus.error("Unknown error");	// FIXME
@@ -1410,7 +1410,7 @@ function Janus(gatewayCallbacks) {
 				Janus.vdebug("Candidate sent!");
 				Janus.vdebug(json);
 				if(json["janus"] !== "ack") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 					return;
 				}
 			},
@@ -1611,7 +1611,7 @@ function Janus(gatewayCallbacks) {
 				Janus.log("Destroyed handle:");
 				Janus.debug(json);
 				if(json["janus"] !== "success") {
-					Janus.error("Ooops: " + json["error"].code + " " + json["error"].reason);	// FIXME
+					Janus.error("Send it, sorry somethin is wrong: " + json["error"].code + " " + json["error"].reason);	// FIXME
 				}
 				delete pluginHandles[handleId];
 				callbacks.success();
