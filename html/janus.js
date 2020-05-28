@@ -460,7 +460,7 @@ function Janus(gatewayCallbacks) {
 			Janus.log("Using REST API to contact Janus: " + server);
 		}
 	}
-	var iceServers = gatewayCallbacks.iceServers || [{urls: ["stun:stun.l.google.com:19302","stun:stun.voipbuster.com","stun:stun.ekiga.net","stun:stun01.sipphone.com","stun:stun1.l.google.com:19302"]}];
+	var iceServers = gatewayCallbacks.iceServers || [{urls: ["stun:stun.l.google.com:19302","stun:stun.ekiga.net","stun:stun1.l.google.com:19302"]}];
 	var iceTransportPolicy = gatewayCallbacks.iceTransportPolicy;
 	var bundlePolicy = gatewayCallbacks.bundlePolicy;
 	// Whether IPv6 candidates should be gathered
