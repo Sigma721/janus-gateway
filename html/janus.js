@@ -350,6 +350,7 @@ Janus.init = function(options) {
 				}
 				if(Janus.safariVp8) {
 					Janus.log("This version of Safari supports VP8");
+					alert("Send it: This version of Safari is supported");
 				} else {
 					Janus.warn("This version of Safari does NOT support VP8: if you're using a Technology Preview, " +
 						"try enabling the 'WebRTC VP8 codec' setting in the 'Experimental Features' Develop menu");
