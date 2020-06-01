@@ -353,6 +353,7 @@ Janus.init = function(options) {
 				} else {
 					Janus.warn("This version of Safari does NOT support VP8: if you're using a Technology Preview, " +
 						"try enabling the 'WebRTC VP8 codec' setting in the 'Experimental Features' Develop menu");
+					alert("Send it: This is an outdated version of Safari, please use different browser");
 				}
 			} else {
 				// We do it in a very ugly way, as there's no alternative...
