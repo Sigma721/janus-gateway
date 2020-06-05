@@ -214,12 +214,12 @@ Janus.init = function(options) {
 			console = { log: function() {} };
 		}
 		// Console logging (all debugging disabled by default)
-		#Janus.trace = Janus.noop;
-		#Janus.debug = Janus.noop;
-		#Janus.vdebug = Janus.noop;
-		#Janus.log = Janus.noop;
-		#Janus.warn = Janus.noop;
-		#Janus.error = Janus.noop;
+		//Janus.trace = Janus.noop;
+		//Janus.debug = Janus.noop;
+		//Janus.vdebug = Janus.noop;
+		//Janus.log = Janus.noop;
+		//Janus.warn = Janus.noop;
+		//Janus.error = Janus.noop;
 		if(options.debug === true || options.debug === "all") {
 			// Enable all debugging levels
 			Janus.trace = console.trace.bind(console);
